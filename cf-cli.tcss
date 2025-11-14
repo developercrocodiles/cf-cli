@@ -1,0 +1,144 @@
+/* cf-cli.tcss - Stylesheet for Cloudflare TUI */
+
+/* Base Screen */
+Screen {
+    layout: vertical;
+    background: $surface;
+    color: $text;
+}
+
+/* Header and Footer */
+Header {
+    dock: top;
+    height: 1;
+    background: $primary-darken-1;
+}
+
+Footer {
+    dock: bottom;
+    height: 1;
+    background: $primary-darken-1;
+}
+
+/* Main content area */
+Vertical {
+    height: 1fr;
+    width: 1fr;
+    padding: 0 1;
+}
+
+/* Tree view for zones and records */
+#tree {
+    border: solid $primary;
+    background: $surface-lighten-1;
+    width: 1fr;
+    height: 1fr;
+    padding: 1;
+    margin-top: 1;
+}
+
+/* Log panel */
+#log {
+    border: solid $primary-lighten-2;
+    height: 10;
+    width: 1fr;
+    margin-top: 1;
+    padding: 0 1;
+    border-title: "Log";
+}
+
+/* Loading indicator */
+#loading-static {
+    width: 1fr;
+    text-align: center;
+    color: $text-muted;
+    text-style: italic;
+    display: none; /* Hidden by default */
+    padding-top: 1;
+}
+
+/* --- Modals --- */
+
+/* Delete confirmation modal */
+ConfirmDeleteScreen {
+    align: center middle;
+}
+
+#dialog {
+    grid-size: 2;
+    grid-gutter: 1;
+    padding: 0 1;
+    width: 44;
+    height: 7;
+    border: thick $primary;
+    background: $surface-darken-1;
+    color: $text;
+}
+
+#question {
+    column-span: 2;
+    height: 1;
+    width: 1fr;
+    content-align: center middle;
+    margin-top: 1;
+}
+
+#delete {
+    width: 1fr;
+}
+
+#cancel {
+    width: 1fr;
+}
+
+/* Add/Edit Record modal */
+RecordEditScreen {
+    align: center middle;
+}
+
+#record-form {
+    width: 80;
+    height: auto;
+    padding: 1 2;
+    border: thick $primary;
+    background: $surface-darken-1;
+}
+
+#record-form > Label {
+    text-style: bold;
+    width: 100%;
+    content-align: center middle;
+    margin-bottom: 1;
+}
+
+/* Form layout */
+#record-form Horizontal {
+    height: auto;
+    margin-bottom: 1;
+}
+
+.form-label {
+    width: 10;
+    margin-right: 1;
+    height: 1;
+    content-align-vertical: middle;
+}
+
+#record-form Input {
+    width: 1fr;
+}
+
+#record-form Switch {
+    height: 1;
+    width: auto;
+}
+
+.form-buttons {
+    align: center middle;
+    margin-top: 1;
+}
+
+.form-buttons Button {
+    margin: 0 1;
+}
+
